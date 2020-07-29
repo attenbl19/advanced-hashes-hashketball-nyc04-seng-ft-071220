@@ -193,7 +193,7 @@ def player_stats(player_name_stat)
          game_hash[location][attribute].each do |player|
            next unless player[:player_name] == player_name_stat
            
-          new_hash_stats = :players.delete_if do |k, v|
+              new_hash_stats = :players.delete_if do |k, v|
          k == :player_name
         end
       end
