@@ -202,11 +202,11 @@ def player_stats(player_name_stat)
   new_hash_stats
 end
   
-  #def big_shoe_rebounds
-    #shoe_size = 0
+  def big_shoe_rebounds
+    shoe_size = 0
     
-    #game_hash.each do |location, team_data|
-      #[:player].find 
-  #end
+    game_hash.each do |location, team_data|
+      [:player].find 
+  end
   
 
