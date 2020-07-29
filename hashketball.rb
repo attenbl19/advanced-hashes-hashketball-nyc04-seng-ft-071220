@@ -127,3 +127,86 @@ def game_hash
 end
 
 # Write code here
+def num_points_scored(which_player)
+  
+    game_hash.each do |location, team_data|
+      team_data.each do |attribute, data|
+        next unless attribute == :players
+        
+          data.each do |data_item|
+            return data_item[:points] if data_item[:player_name] == which_player
+          end
+        end
+      end
+    end
+    
+    def shoe_size(name)
+      game_hash.each do |location, team_data|
+        team_data.each do |attribute, data|
+          next unless attribute == :players
+          
+          data.each do |data_item|
+            return data_item[:shoe] if data_item[:player_name] == name
+          end
+        end
+      end
+    end
+    
+    def team_colors(name_of_team)
+      game_hash.collect do |location, team|
+            return game_hash[location][:colors] if team[:team_name] == name_of_team
+      end
+    end
+
+      def team_names
+        game_hash.collect do |location, team|
+       team[:team_name]
+     end
+   end
+    
+      
+ def player_numbers (name_of_team)
+   new_array_jersey_num = []
+   
+       game_hash.each do |location, team_data|
+         next unless team_data[:team_name] == name_of_team
+         
+         team_data.each do |attribute, data|
+           next unless attribute == :players
+           
+           data.each do |data_item|
+             new_array_jersey_num << data_item[:number]
+           end
+         end
+       end
+       new_array_jersey_num
+     end
+    
+def player_stats(player_name_stat)
+  new_hash_stats = {}
+    
+    game_hash.collect do |location, team_data|
+
+      team_data.each do |attribute, data|
+        next unless attribute = :players
+        
+         game_hash[location][attribute].each do |player|
+           next unless player[:player_name] == player_name_stat
+           
+          new_hash_stats = :players.delete_if do |k, v|
+         k == :player_name
+        end
+      end
+    end
+  end
+  new_hash_stats
+end
+  
+  #def big_shoe_rebounds
+    #shoe_size = 0
+    
+    #game_hash.each do |location, team_data|
+      #[:player].find 
+  #end
+  
+
